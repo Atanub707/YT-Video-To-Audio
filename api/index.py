@@ -9,9 +9,6 @@ def create_app():
     app.config['UPLOAD_FOLDER'] = '/tmp'
     app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
-    # Create downloads directory if it doesn't exist
-    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-
     def download_youtube_audio(url, output_folder):
         """Download YouTube audio as MP3 using yt-dlp"""
         try:
